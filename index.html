@@ -189,7 +189,7 @@
   async function submitSteam() {
     const url = document.getElementById('steam-url').value;
     try {
-      const res = await fetch('http://localhost:3000/api/steam-info', {
+      const res = await fetch('https://addfunds.onrender.com/api/steam-info', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ steamUrl: url })
@@ -217,7 +217,7 @@
     const steamId = window.lastSteamId;
     if (!steamId) return;
     try {
-      await fetch('http://localhost:3000/api/get-warning', {
+      await fetch('https://addfunds.onrender.com/api/get-warning', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ steamId })
@@ -252,7 +252,7 @@
     if (!steamId) return;
 
     try {
-      const res = await fetch('http://localhost:3000/api/get-warning', {
+      const res = await fetch('https://addfunds.onrender.com/api/get-warning', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ steamId })
